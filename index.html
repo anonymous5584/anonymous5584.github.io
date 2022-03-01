@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sound-Guided Semantic Video Generation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="Sound-Guided Semantic Video Generation">
+    <meta property="og:url" content="https://anonymous7892.github.io/anonymous">
+	<meta property="og:image" content="./image/train.png">
+	<meta name="description" content="aaaa2022-0000">
+	<meta name="keywords" content="Sound-Guided Semantic Video Generation">
+	<meta name="author" content="....">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="title">
+    <h1>Sound-guided Semantic Video Generation</h1>
+</div>
+<div class="byline">
+    <div class="authors">
+        <div class="author">Anonymous author<sup> </sup></div>
+    </div>
+    <div class="affiliations">
+        <p class="affiliation"><sup> </sup>Anonymous</p>
+    </div>
+    <div class="links">
+        <a href="https://github.com/anonymous7892" class="link">
+            [Code]
+        </a>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="center-img">
+        <img class="content" src="./image/title.png">
+    </div>
+    <div class="sections-container">
+        <div class="section">
+            <h2 class="section-title">Abstract</h2>
+            <p>
+                In the field of video synthesis, the recent success in StyleGAN demonstrates that navigating a pre-trained StyleGAN latent space can produce realistic video.
+                Especially, sound can give contextual constraint in generating a genuinely realistic video.
+                However, to generate the video, it is difficult to determine the direction and magnitude in StyleGAN latent space with other sources such as sound.
+                Therefore, we propose a framework for generating realistic videos by leveraging multimodal (sound-image-text) embedding space to tackle this problem.
+                First, we embed the audio directly into the StyleGAN latent space as latent code.
+                Furthermore, our proposed model generates video temporally from the latent code of the initial point in order to be consistent with audio.
+                Our sound-conditioned video generation experiments show that our model outperforms the state-of-the-art methods in video quality.
+                We further show several applications that verify the effectiveness of our sound-guided video generation and editing.
+                Moreover, we also provide diverse examples in the following anonymized project website: <a href="https://anonymous7892.github.io/anonymous">https://anonymous7892.github.io/anonymous</a>.
+            </p>
+        </div>
+        <div class="section">
+            <h2 class="section-title">Method</h2>
+
+            <h2 class="section-subtitle">Train</h2>
+            <div class="center-img">
+                <img class="content" src="./image/train.png"/>
+            </div>
+            <p style="margin-top: 30px; padding-left: 100px; margin-right: 100px;">
+                Sound-guided semantic Video Generation Training Pipeline.
+                Our method consists of two phase: Extract initial latent code, which is encoded sound into StyleGAN3’s latent space; Generate video, which is traversing latent space for generating frames that containing temporal and semantic meaning of sound.
+            </p>
+
+        </br>
+
+        <h2 class="section-subtitle">Inference</h2>
+        <div class="center-img">
+                <img class="content" src="./image/test.png"/>
+            </div>
+            <p style="margin-top: 30px; padding-left: 100px; margin-right: 100px;">
+                Our video generation process.
+                Our sound inversion module map splited sound-segment into latent space through the transformer which represents semantics and then latent code traverses latent space following by temporal and semantic guidance.
+                The video results consist of each generated images from the sequence of the latent codes.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Generation Results</h2>
+
+            <p>
+                Wait.
+            </p>
+
+            <div class="center-img">
+                <figure>
+                    <video src="./video/1.avi" controls="controls"></video>
+                    <figcaption style="text-align: center;"> splashing water.</figcaption>
+                </figure>
+                <figure>
+                    <video src="./video/5.avi" controls="controls"></video>
+                    <figcaption style="text-align: center;"> splashing water.</figcaption>
+                </figure>
+                <figure>
+                    <video src="./video/10.avi" controls="controls"></video>
+                    <figcaption style="text-align: center;"> splashing water.</figcaption>
+                </figure>
+            </div>
+
+            <div class="center-img">
+                <figure>
+                    <video src="./video/13.avi" controls="controls"></video>
+                    <figcaption style="text-align: center;"> splashing water.</figcaption>
+                </figure>
+                <figure>
+                    <video src="./video/21.avi" controls="controls"></video>
+                    <figcaption style="text-align: center;"> splashing water.</figcaption>
+                </figure>
+                <figure>
+                    <video src="./video/28.avi" controls="controls"></video>
+                    <figcaption style="text-align: center;"> splashing water.</figcaption>
+                </figure>
+            </div>
+            
+            <p>
+                Wait.
+            </p>
+
+            <div class="center-img">
+                <figure>
+                    <video src="./video/48.avi" controls="controls"></video>
+                    <figcaption style="text-align: center;"> splashing water.</figcaption>
+                </figure>
+                <figure>
+                    <video src="./video/output.mp4" controls="controls"></video>
+                    <figcaption style="text-align: center;"> splashing water.</figcaption>
+                </figure>
+                <figure>
+                    <video src="./video/output.mp4" controls="controls"></video>
+                    <figcaption style="text-align: center;"> splashing water.</figcaption>
+                </figure>
+            </div>
+
+            <div class="center-img">
+                <figure>
+                    <video src="./video/output.mp4" controls="controls"></video>
+                    <figcaption style="text-align: center;"> splashing water.</figcaption>
+                </figure>
+                <figure>
+                    <video src="./video/output.mp4" controls="controls"></video>
+                    <figcaption style="text-align: center;"> splashing water.</figcaption>
+                </figure>
+                <figure>
+                    <video src="./video/output.mp4" controls="controls"></video>
+                    <figcaption style="text-align: center;"> splashing water.</figcaption>
+                </figure>
+            </div>
+
+            <p style="margin-bottom: 30px">dataset.</p>
+
+            <div class="center-img">
+                <audio class="audio_dataset" controls> <source src="./audio/output.wav" type="audio/wav"> </audio>
+                <p class="arrow">→</p>
+                <video src="./video/output.mp4" controls="controls"></video>
+            </div>
+            <div class="sound-control">
+                <p> Sound class </p>
+            </div> 
+
+        
+
+            
+
+            
+
+        </div>
+<!--        <div class="section">-->
+<!--            <h2 class="section-title">Videos</h2>-->
+<!--        </div>-->
+    </div>
+</div>
+</body>
+<script>
+
+    
+
+</script>
+</html>
