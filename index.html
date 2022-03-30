@@ -14,9 +14,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+    <!-- <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a>
+                <em>eccv2022</em>
+            </a>
+        </div>
+        <nav id="menu" class="manu_nav" role="navigation">
+            <ul class="main_menu">
+                <li class="activate">
+                    <a href="#section_title">Home</a>
+                </li>
+                <li class="activate">
+                    <a href="#section_title">Abstract</a>
+                </li>
+                <li class="activate">
+                    <a href="#section_title">Method</a>
+                </li>
+                <li class="activate">
+                    <a href="#section_title">Video</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header> -->
+
 <div class="title">
     <h1>Sound-guided Semantic Video Generation</h1>
 </div>
+<center>
 <div class="byline">
     <div class="authors">
         <div class="author">Anonymous 5584 author<sup> </sup></div>
@@ -30,15 +56,17 @@
         </a>
     </div>
 </div>
+</center>
 
 
 <div class="container">
-    <div class="center-img">
-        <img class="content" src="./image/title.png">
-    </div>
     <div class="sections-container">
         <div class="section">
+            <hr>
+            <center>
             <h2 class="section-title">Abstract</h2>
+            </center>
+            <hr>
             <p>
                 In the field of video synthesis, the recent success in StyleGAN demonstrates that navigating a pre-trained StyleGAN latent space can produce realistic video.
                 Especially, sound can give contextual constraint in generating a genuinely realistic video.
@@ -51,25 +79,34 @@
                 Moreover, we also provide diverse examples in the following anonymized project website: <a href="https://anonymous5584.github.io/anonymous">https://anonymous5584.github.io/</a>.
             </p>
         </div>
+        <div class="center-img">
+            <img class="content" src="./image/title.png">
+        </div>
         <div class="section">
+            <hr>
+            <center>
             <h2 class="section-title">Method</h2>
-
+            </center>
+            <hr>
+            <center>
             <h2 class="section-subtitle">Train</h2>
+            </center>
             <div class="center-img">
                 <img class="content" src="./image/train.png"/>
             </div>
-            <p style="margin-top: 30px; padding-left: 100px; margin-right: 100px;">
+            <p style="margin-top: 30px;">
                 Sound-guided semantic Video Generation Training Pipeline.
                 Our method consists of two phase: Extract initial latent code, which is encoded sound into StyleGAN3’s latent space; Generate video, which is traversing latent space for generating frames that containing temporal and semantic meaning of sound.
             </p>
 
-        </br>
-
+        <!-- </br> -->
+        <center>
         <h2 class="section-subtitle">Inference</h2>
+        </center>
         <div class="center-img">
                 <img class="content" src="./image/test.png"/>
             </div>
-            <p style="margin-top: 30px; padding-left: 100px; margin-right: 100px;">
+            <p style="margin-top: 30px;">
                 Our video generation process.
                 Our sound inversion module map splited sound-segment into latent space through the transformer which represents semantics and then latent code traverses latent space following by temporal and semantic guidance.
                 The video results consist of each generated images from the sequence of the latent codes.
@@ -77,87 +114,170 @@
         </div>
         
         <div class="section">
-            <h2 class="section-title">Generation Results</h2>
-	    <p>
-                Example : The Sub-URMP dataset.
-            </p>
-	    <p>
-                Our model.
-            </p>
-	    <div class="center-img">
-                <figure>
-                    <video src="https://kr.object.ncloudstorage.com/eccv2022/video/cello.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Cello.</figcaption>
-                </figure>
-                <figure>
-                    <video src="https://kr.object.ncloudstorage.com/eccv2022/video/horn.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Horn.</figcaption>
-                </figure>
-                <figure>
-                    <video src="https://kr.object.ncloudstorage.com/eccv2022/video/violin.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Violin.</figcaption>
-                </figure>
-		<figure>
-                    <video src="https://kr.object.ncloudstorage.com/eccv2022/video/trumbone.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Trumbone.</figcaption>
-                </figure>
-		<figure>
-                    <video src="https://kr.object.ncloudstorage.com/eccv2022/video/tuba.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Tuba.</figcaption>
-                </figure>
-            </div>
-	    <p>
-                CCVS.
-            </p>
-	    <div class="center-img">
-                <figure>
-                    <video src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/ccvs/cello.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Cello.</figcaption>
-                </figure>
-                <figure>
-                    <video src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/ccvs/horn.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Horn.</figcaption>
-                </figure>
-                <figure>
-                    <video src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/ccvs/violin.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Violin.</figcaption>
-                </figure>
-		<figure>
-                    <video src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/ccvs/trumbone.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Trumbone.</figcaption>
-                </figure>
-		<figure>
-                    <video src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/ccvs/tuba.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Tuba.</figcaption>
-                </figure>
-            </div>
-	   <p>
-               Sound2Sight
-            </p>
-	    <div class="center-img">
-                <figure>
-                    <video width="256" height="256" src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/s2s/cello.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Cello.</figcaption>
-                </figure>
-                <figure>
-                    <video width="256" height="256" src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/s2s/horn.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Horn.</figcaption>
-                </figure>
-                <figure>
-                    <video width="256" height="256" src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/s2s/violin.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Violin.</figcaption>
-                </figure>
-		<figure>
-                    <video width="256" height="256" src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/s2s/trumbone.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Trumbone.</figcaption>
-                </figure>
-		<figure>
-                    <video width="256" height="256" src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/s2s/tuba.m4v" controls="controls"></video>
-                    <figcaption style="text-align: center;"> Tuba.</figcaption>
-                </figure>
-            </div>
-            <p>
-                Example : Our landscape dataset.
+            <hr>
+            <center>
+                <h2 class="section-title">Generation Results</h2>
+                <hr>
+                <p style="font-size: 25px;
+                font-family: Barlow,system-ui,Arial,sans-serif;
+                color: #082333;
+                font-weight: 400;
+                line-height: 1.1em;
+                margin: 1 1 1em;
+                text-align: center;"> 
+                    Sub-URMP dataset.
+                </p>
+            </center>
+            <div class="sub-urmp">
+            <table width="850px">
+                <!-- <center> -->
+                <tbody><tr>
+                    <td width=20px align=center style="writing-mode: tb-rl;padding-right: 0px;font-size: 20px;">
+                        Ours
+                    </td>
+                    <td width="256px">
+                        <video src="https://kr.object.ncloudstorage.com/eccv2022/video/cello.m4v" controls="controls"></video>
+                    </td>
+                    <td width="256px">
+                        <video src="https://kr.object.ncloudstorage.com/eccv2022/video/horn.m4v" controls="controls"></video>
+                    </td>
+                    <td width="256px">
+                        <video src="https://kr.object.ncloudstorage.com/eccv2022/video/violin.m4v" controls="controls"></video>
+                    </td>
+                    <td width="256px">
+                        <video src="https://kr.object.ncloudstorage.com/eccv2022/video/trumbone.m4v" controls="controls"></video>
+                    </td>
+                    <td width="256px">
+                        <video src="https://kr.object.ncloudstorage.com/eccv2022/video/tuba.m4v" controls="controls"></video>
+                    </td>
+                    </tr></table>
+                            <!-- <table width="1300" height="24" border="0" cellspacing="1" cellpadding="2">
+                                <tbody><tr><td width="260" valign="middle" halign="middle" align="center">
+                                    Cello
+                                </td>
+                                <td width="260" valign="middle" halign="middle" align="center">
+                                    Horn
+                                </td>
+                                <td width="260" valign="middle" halign="middle" align="center">
+                                    Violin
+                                </td>
+                                <td width="260" valign="middle" halign="middle" align="center">
+                                    Trumbone
+                                </td>
+                                <td width="260" valign="middle" halign="middle" align="center">
+                                    Tuba
+                                </td>
+                            </center>
+                            </tr></tbody></table>			 -->
+                            <!-- <br> -->
+            <table width="850px">
+                <center>
+                <tbody><tr>
+                    <td width=20 align=center style="writing-mode: tb-rl;padding-right: 0px;font-size: 20px;">
+                        CCVS
+                    </td>
+                    <td width="256px">
+                        <video src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/ccvs/cello.m4v" controls="controls"></video>
+                    </td>
+                    <td width="256px">
+                            <video src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/ccvs/horn.m4v" controls="controls"></video>
+                        </td>
+                    <td width="256px">           
+                        <video src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/ccvs/violin.m4v" controls="controls"></video>
+                    </td>
+                    <td width="256px">    
+                        <video src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/ccvs/trumbone.m4v" controls="controls"></video>
+                    </td>
+                    <td width="256px">
+                        <video src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/ccvs/tuba.m4v" controls="controls"></video>
+                    </td>
+            </table>
+                           
+            <table width="850px">
+                <center>
+                <tbody><tr>
+                    <td width=20 align=center style="writing-mode: tb-rl;padding-right: 0px;font-size: 20px;">
+                        Sound2Sight
+                    </td>
+                    <td width="256px">
+                        <video width="256" height="256" src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/s2s/cello.m4v" controls="controls"></video>
+                    </td>
+                    <td width="256px">
+                        <video width="256" height="256" src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/s2s/horn.m4v" controls="controls"></video>
+                    </td>
+                    <td width="256px">
+                        <video width="256" height="256" src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/s2s/violin.m4v" controls="controls"></video>
+                    </td>
+                    <td width="256px">
+                        <video width="256" height="256" src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/s2s/trumbone.m4v" controls="controls"></video>
+                    </td>
+                    <td width="256px">
+                        <video width="256" height="256" src="https://kr.object.ncloudstorage.com/eccv2022/supplementary/s2s/tuba.m4v" controls="controls"></video>
+                    </td>
+            </table>
+                            
+                            <!-- <table width="1300" height="24" border="0" cellspacing="1" cellpadding="2">
+                                <tbody><tr>
+                                <td width="260" valign="middle" halign="middle" align="center">
+                                    Cello
+                                </td>
+                                <td width="260" valign="middle" halign="middle" align="center">
+                                    Horn
+                                </td>
+                                <td width="260" valign="middle" halign="middle" align="center">
+                                    Violin
+                                </td>
+                                <td width="260" valign="middle" halign="middle" align="center">
+                                    Trumbone
+                                </td>
+                                <td width="260" valign="middle" halign="middle" align="center">
+                                    Tuba
+                                </td>
+                            </center>
+                            </tr></tbody></table>			 -->
+                            <!-- <br> -->
+                <!-- </td> -->
+            <!-- </tr> -->
+        <!-- </tbody></table>     -->
+            <table width="850px">
+                <center>
+                <tbody><tr>
+                    <td width=20 style="writing-mode: tb-rl;padding-right: 30px;font-size: 30px;">
+                        
+                    </td>
+                    <td width="256px">
+                        <table width="1300" height="24" border="0" cellspacing="1" cellpadding="3">
+                            <tbody><tr>
+                            <td width="260" valign="middle" halign="middle" align="center" style="font-size: 20px">
+                                Cello
+                            </td>
+                            <td width="260" valign="middle" halign="middle" align="center" style="font-size: 20px">
+                                Horn
+                            </td>
+                            <td width="260" valign="middle" halign="middle" align="center" style="font-size: 20px">
+                                Violin
+                            </td>
+                            <td width="260" valign="middle" halign="middle" align="center" style="font-size: 20px">
+                                Trumbone
+                            </td>
+                            <td width="260" valign="middle" halign="middle" align="center" style="font-size: 20px">
+                                Tuba
+                            </table>
+                        </td>
+                        </center>
+                </tr></tbody>
+            </table>    		
+            <br>
+        </div>      
+	    
+            <p style="font-size: 25px;
+                font-family: Barlow,system-ui,Arial,sans-serif;
+                color: #082333;
+                font-weight: 400;
+                line-height: 1.1em;
+                margin: 0 0 0.5rem;
+                text-align: center;">
+                Our landscape dataset.
             </p>
 
             <div class="center-img">
