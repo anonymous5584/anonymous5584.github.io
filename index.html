@@ -12,6 +12,17 @@
 	<meta name="author" content="....">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/x-mathjax-config">
+
+        MathJax.Hub.Config({
+        
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        
+        });
+        
+    </script>
+        
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
 </head>
 <body>
     <!-- <header class="main-header clearfix" role="header">
@@ -71,26 +82,21 @@ background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgb
         </div>
         
         <div class="section">
-            <hr>
+            <!-- <hr> -->
             <center>
             <h2 class="section-title">Abstract</h2>
             </center>
             <hr>
             <p>
-                In the field of video synthesis, the recent success in StyleGAN demonstrates that navigating a pre-trained StyleGAN latent space can produce realistic video.
-                Especially, sound can give contextual constraint in generating a genuinely realistic video.
-                However, to generate the video, it is difficult to determine the direction and magnitude in StyleGAN latent space with other sources such as sound.
-                Therefore, we propose a framework for generating realistic videos by leveraging multimodal (sound-image-text) embedding space to tackle this problem.
-                First, we embed the audio directly into the StyleGAN latent space as latent code.
-                Furthermore, our proposed model generates video temporally from the latent code of the initial point in order to be consistent with audio.
-                Our sound-conditioned video generation experiments show that our model outperforms the state-of-the-art methods in video quality.
-                We further show several applications that verify the effectiveness of our sound-guided video generation and editing.
-                Moreover, we also provide diverse examples in the following anonymized project website: <a href="https://anonymous5584.github.io/anonymous">https://anonymous5584.github.io/</a>.
+                The recent success in StyleGAN demonstrates that pre-trained StyleGAN latent space is useful for realistic video generation. However, the generated motion in the video is usually not semantically meaningful due to the difficulty of determining the direction and magnitude in the StyleGAN latent space. 
+                In this paper, we propose a framework to generate realistic videos by leveraging multimodal (sound-image-text) embedding space. As sound provides the temporal contexts of the scene, our framework learns to generate a video that is semantically consistent with sound.
+                First, our sound inversion module maps the audio directly into the StyleGAN latent space. We then incorporate the CLIP-based multimodal embedding space to further provide the audio-visual relationships. Finally, the proposed frame generator learns to find the trajectory in the latent space which is coherent with the corresponding sound and generates a video in a hierarchical manner. 
+                We provide the new high-resolution landscape video dataset (audio-visual pair) for the sound-guided video generation task. The experiments show that our model outperforms the state-of-the-art methods in terms of video quality. We further show several applications including image and video editing to verify the effectiveness of our method. 
             </p>
         </div>
         
         <div class="section">
-            <hr>
+            <!-- <hr> -->
             <center>
             <h2 class="section-title">Method</h2>
             </center>
@@ -102,8 +108,7 @@ background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgb
                 <img class="content" src="./image/train.png"/>
             </div>
             <p style="margin-top: 30px;">
-                Sound-guided semantic Video Generation Training Pipeline.
-                Our method consists of two phase: Extract initial latent code, which is encoded sound into StyleGAN3’s latent space; Generate video, which is traversing latent space for generating frames that containing temporal and semantic meaning of sound.
+                An overview of our sound-guided video generation model, which consists of two main parts: (i) Sound Inversion Encoder, which iteratively generates sound-conditioned latent code ${\bf{w}}_a^t$ from corresponding audio time segments. (ii) StyleGAN-based Video Generator, which recurrently generates a video frame that is trained to be consistent with neighboring frames. Moreover, we train image and video discriminators adversarially to generate perceptually realistic video frames.
             </p>
 
         <!-- </br> -->
@@ -114,14 +119,13 @@ background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgb
                 <img class="content" src="./image/test.png"/>
             </div>
             <p style="margin-top: 30px;">
-                Our video generation process.
-                Our sound inversion module map splited sound-segment into latent space through the transformer which represents semantics and then latent code traverses latent space following by temporal and semantic guidance.
-                The video results consist of each generated images from the sequence of the latent codes.
+                An overview of our proposed sound-guided video generation model. Our model consists of two main modules: 
+                (i) Sound Inversion Encoder (Section 3.1), which takes a sequence of audio inputs as an input and outputs a latent code to generate video frames. (ii) StyleGAN-based Video Generator (Section 3.2), which generates temporally consistent and perceptually realistic video frames conditioned on the sound input.
             </p>
         </div>
         
         <div class="section">
-            <hr>
+            <!-- <hr> -->
             <center>
                 <h2 class="section-title">Generation Results</h2>
                 <hr>
